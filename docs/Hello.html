@@ -72,7 +72,7 @@
         throw new Error("Browser doesn't support addEentListener or attachEvent");
       }
       payload = {}
-      payload.frameId = 'ExtGen_iFrame_QMS_WEBUI_WebUIComponent_15615041734481_displayIFrameId_1561573606312';
+      payload.origin = window.frames.origin;
       payload.method = 'requestJwtToken'
       window.parent.postMessage(JSON.stringify(payload), '*');
     }
