@@ -71,6 +71,10 @@
       } else {
         throw new Error("Browser doesn't support addEentListener or attachEvent");
       }
+      payload = {}
+      payload.frameId = frameElement.id;
+      payload.method = 'requestJwtToken'
+      window.parent.postMessage(JSON.stringify(payload), '*');
     }
 
     function receiveJWTToken(token) {
