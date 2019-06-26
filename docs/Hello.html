@@ -1,0 +1,82 @@
+
+<html>
+  <body>
+    <h1>Hello!</h1>
+    <p>Request Headers:</p>
+    <ul>
+        <li>
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36
+        </li>
+      
+        <li>
+        Accept: text/html,application/xhtml&#43;xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+        </li>
+      
+        <li>
+        Via: 1.1 vegur
+        </li>
+      
+        <li>
+        Total-Route-Time: 4150
+        </li>
+      
+        <li>
+        Accept-Encoding: gzip, deflate, br
+        </li>
+      
+        <li>
+        Connect-Time: 0
+        </li>
+      
+        <li>
+        Upgrade-Insecure-Requests: 1
+        </li>
+      
+        <li>
+        Accept-Language: en-US,en;q=0.9
+        </li>
+      
+        <li>
+        X-Forwarded-For: 148.87.23.11
+        </li>
+      
+        <li>
+        X-Forwarded-Proto: https
+        </li>
+      
+        <li>
+        X-Forwarded-Port: 443
+        </li>
+      
+        <li>
+        X-Request-Start: 1561570415293
+        </li>
+      
+        <li>
+        Connection: close
+        </li>
+      
+        <li>
+        X-Request-Id: e42646aa-78c3-4e7b-907f-24f8dc6667ed
+        </li>
+      
+    </ul>
+  </body>
+  <script type="text/javascript">
+    function init() {
+      if (typeof window.addEventListener === 'function') {
+        window.addEventListener('message', receiveJWTToken, false);
+      } else if (typeof window.attachEvent === 'function') {
+        window.attachEvent('onmessage', receiveJWTToken);
+      } else {
+        throw new Error("Browser doesn't support addEentListener or attachEvent");
+      }
+    }
+
+    function receiveJWTToken(token) {
+      alert(token.data);
+    }
+
+    init();
+  </script>
+</html>
