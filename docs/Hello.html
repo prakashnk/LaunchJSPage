@@ -61,6 +61,14 @@
         </li>
       
     </ul>
+    
+    <p>Client Exchange :</p>
+    <ul>
+       <li>
+        Jwt Token: <input name="JwtToken" type="text" id='JwtToken' disabled></input>
+        </li>
+    </ul>
+
   </body>
   <script type="text/javascript">
     function init() {
@@ -78,7 +86,7 @@
     }
 
     function receiveJWTToken(token) {
-      alert(token.data);
+      $("#JwtToken").val(token.data);
     }
 
     init();
