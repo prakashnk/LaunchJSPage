@@ -87,8 +87,7 @@
 
     function receiveJWTToken(token) {
       debugger;
-      document.getElementById("JwtToken").value = token.data
-      alert(token.data);
+      document.getElementById("JwtToken").innerHTML = token.data;
     }
 
     init();
