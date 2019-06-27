@@ -65,7 +65,7 @@
     <p>Client Exchange :</p>
     <ul>
        <li>
-        Jwt Token: <input name="JwtToken" type="text" id='JwtToken' disabled></input>
+        Jwt Token: <p id="JwtToken"></p>
         </li>
     </ul>
 
@@ -86,7 +86,7 @@
     }
 
     function receiveJWTToken(token) {
-      $("#JwtToken").val(token.data);
+      document.getElementById("JwtToken").value = token.data
     }
 
     init();
