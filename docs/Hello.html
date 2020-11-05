@@ -64,6 +64,9 @@
     
     <p>Client Exchange :</p>
     <ul>
+      <li>
+        Document Referrer: <p id="DocReferrer"></p>
+        </li>
        <li>
         Jwt Token: <p id="JwtToken"></p>
         </li>
@@ -89,5 +92,7 @@
       document.getElementById("JwtToken").innerHTML = token.data;
     }
     init();
+    
+    document.getElementById("DocReferrer").innerHTML = document.referrer;
   </script>
 </html>
