@@ -76,23 +76,22 @@
   <script type="text/javascript">
     function init() {
       if (typeof window.addEventListener === 'function') {
-        window.addEventListener('message', receiveJWTToken, false);
+        window.addEventListener('message', receiveMessage, false);
       } else if (typeof window.attachEvent === 'function') {
-        window.attachEvent('onmessage', receiveJWTToken);
+        window.attachEvent('onmessage', receiveMessage);
       } else {
         throw new Error("Browser doesn't support addEentListener or attachEvent");
       }
       payload = {}
       payload.origin = window.frames.origin;
-      payload.method = 'requestJwtToken'
+      payload.method = 'requestJwtTokenAndParentFullUrl'
       window.parent.postMessage(JSON.stringify(payload), '*');
     }
 
-    function receiveJWTToken(token) {
-      document.getElementById("JwtToken").innerHTML = token.data;
+    function receiveMessage(data) {
+      document.getElementById("JwtToken").innerHTML = data.jwtToken;
+      document.getElementById("DocReferrer").innerHTML = data.parentFullUrl;
     }
     init();
-    
-    document.getElementById("DocReferrer").innerHTML = document.referrer;
   </script>
 </html>
