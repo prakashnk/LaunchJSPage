@@ -89,6 +89,7 @@
     }
 
     function receiveMessage(data) {
+      debugger;
       document.getElementById("JwtToken").innerHTML = data.jwtToken;
       document.getElementById("DocReferrer").innerHTML = data.parentFullUrl;
     }
