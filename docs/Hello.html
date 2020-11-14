@@ -70,11 +70,7 @@
        <li>
         Jwt Token: <p id="JwtToken"></p>
         </li>
-      <li>
-        Full Url Separate Method: <p id="FullUrl"></p>
-        </li>
     </ul>
-
   </body>
   <script type="text/javascript">
     function init() {
@@ -88,17 +84,12 @@
       payload = {}
       payload.origin = window.frames.origin;
       payload.method = 'requestJwtTokenAndParentFullUrl'
-  //    window.parent.postMessage(JSON.stringify(payload), '*');
-      
-      payload.method = 'requestParentFullUrl'
       window.parent.postMessage(JSON.stringify(payload), '*');
     }
 
     function receiveMessage(payload) {
-      debugger;
       document.getElementById("JwtToken").innerHTML = payload.data.jwtToken;
       document.getElementById("DocReferrer").innerHTML = payload.data.parentFullUrl;
-      document.getElementById("FullUrl").innerHTML = payload.data.parentFullUrl;
     }
     init();
   </script>
