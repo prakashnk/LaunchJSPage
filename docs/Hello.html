@@ -70,6 +70,9 @@
        <li>
         Jwt Token: <p id="JwtToken"></p>
         </li>
+      <li>
+        Query Param: <p id="QueryParam"></p>
+        </li>
     </ul>
   </body>
   <script type="text/javascript">
@@ -92,5 +95,7 @@
       document.getElementById("DocReferrer").innerHTML = payload.data.parentFullUrl;
     }
     init();
+    document.getElementById("QueryParam").innerHTML = window.location.search.substr(1);
+    
   </script>
 </html>
