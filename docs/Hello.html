@@ -2,12 +2,21 @@
 <html>
   <body>
     <h1>Hello!</h1>
+    <p id="demo"></p>
   </body>
   <script type="text/javascript">
     window.onload = (event) => {
-          var redirectPath = 'entity=accounts&key=300000011930493';
-          window.location.href = 'cxm://?'+redirectPath;     
-  };
+          
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      // Check for common mobile user agents
+      const isMobileUserAgent = /android|webOS|iPhone|iPad|iPod|blackberry|IEMobile|Opera Mini/i.test(userAgent);
+      // Check for window orientation or IEMobile
+      const isMobileScreenSize = (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+       if(isMobileUserAgent || isMobileScreenSize)
+         document.getElementById("demo").innerHTML = "In Mobile";
+      else
+         document.getElementById("demo").innerHTML = "Browser";
+    };
 
   </script>
 </html>
