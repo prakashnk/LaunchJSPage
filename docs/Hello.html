@@ -2,33 +2,11 @@
 <html>
   <body>
     <h1>Hello!</h1>
-    <p>Client Exchange :</p>
-    <ul>
-      <li>
-        Full Url: <p id="DocReferrer"></p>
-        </li>
-       <li>
-        Jwt Token: <p id="JwtToken"></p>
-        </li>
-      <li>
-        Query Param: <p id="QueryParam"></p>
-        </li>
-    </ul>
   </body>
   <script type="text/javascript">
     window.onload = (event) => {
-     try {
-       var windowHref = window.location.href;
-       var redirectStringIndex = windowHref.indexOf('redirectUrl=');
-       if(redirectStringIndex> -1){
-          var redirectPath = windowHref.substring(redirectStringIndex+12,windowHref.length)
-          if(redirectPath){
-          window.location.href = 'cxm://?'+redirectPath;
-        }
-       }                      
-     }catch(e){
-
-     }
+          var redirectPath = 'entity=accounts&key=300000011930493';
+          window.location.href = 'cxm://?'+redirectPath;     
   };
 
   </script>
